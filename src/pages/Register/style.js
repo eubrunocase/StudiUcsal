@@ -5,87 +5,128 @@ export const Container = styled.div`
     display: grid;
     grid-template-areas: 
     "header header"
-    "form contact";
+    "form content";
+    grid-template-rows: 9.3rem auto;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 6.6rem;
+    column-gap: 10rem;
 
-    width: 100%;
     height: 100vh;
-
-    overflow: hidden;
-
-    padding: 0 8rem 13rem;
+    width: 100%;
 `
+
 export const Form = styled.form`
     grid-area: form;
 
-    margin-left: 12vw;
-    margin-bottom: 2rem;
-    margin-top: 3rem;
-
-    width: 47.5rem;
-    
-
     display: flex;
     flex-direction: column;
-    gap: 3.9rem;
+    gap: 3.5rem;
 
-    > div:first-child { 
+    padding-left: 18rem;
+    padding-bottom: 12.7rem;
+    padding-right: 2rem;
+
+    overflow-y: auto;
+    ::-webkit-scrollbar-thumb {
+        background-color: transparent;
+    }
+
+    > div:first-child {
         display: flex;
         flex-direction: column;
-        gap: .5rem;
-        color: ${() => theme.COLORS.BLACK};
+        gap: 1rem;
+
+        width: fit-content;
+        margin-left: .3rem;
+
 
         h2 {
             font-size: 3rem;
-            font-weight: 700;
         }
 
         p {
-            font-size: 1.4rem;
-            width: 80%;
+            font-size: 1.5rem;
+
+            a {
+                color: ${() => theme.COLORS.BLUE_SECONDARY};
+            }
         }
     }
 
-    > div:nth-child(2) {
+    > #input-wrapper {
         display: flex;
-        flex-direction: column;
-        gap: 4.3rem;
+        align-items: center;
+        gap: 3rem;
     }
 
-    > button {
-        align-self: flex-start;
-        margin-left: 13rem;
+    > #checklist {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+
+            input {
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+
+                border: 1px solid ${() => theme.COLORS.BLUE_SECONDARY};
+                width: 1.2rem;
+                height: 1.2rem;
+
+                position: relative;
+
+                &:checked {
+                    background-color: ${() => theme.COLORS.BLUE_PRIMARY};
+                }
+
+            }
+
+            label {
+                font-size: 1.2rem;
+
+                a {
+                    font-weight: 700;
+                    color: ${() => theme.COLORS.BLUE_SECONDARY};
+                }
+            }
+        }
+    }
+
+    > #finishForm {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
     }
 `
 
-export const Contact = styled.div`
-    grid-area: contact;
+export const Content = styled.div`
+    grid-area: content;
 
-    width: 43rem;
-    height: 40rem;
-    padding: 10%;
-
-    margin-top: 5.5rem;
-    margin-right: -29.8rem;
-
-    background-color: ${() => theme.COLORS.BLUE_PRIMARY};
-
-    border-radius: 3rem 0 0 3rem;
+    width: 40rem;
 
     display: flex;
     flex-direction: column;
-    gap: 4.3rem;
+    gap: 4.4rem;
 
-    > strong {
-        font-size: 3rem;
-        color: ${() => theme.COLORS.WHITE};
+    place-content: center;
+
+    > p {
+        text-transform: uppercase;
+        font-size: 3.5rem;
+        font-weight: 700;
+        text-align: center;
+
+        strong {
+            color: ${() => theme.COLORS.BLUE_PRIMARY};
+        }
     }
 
-    > div.contactForm {
-        font-size: 1.7rem;
-        color: ${() => theme.COLORS.WHITE};
-
-        display: flex;
-        align-items: center;
-        gap: 2rem;
+    > svg {
+        align-self: center;
     }
 `

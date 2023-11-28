@@ -2,6 +2,23 @@ import { createGlobalStyle } from "styled-components"
 import { theme } from "./theme"
 
 export const GlobalStyle = createGlobalStyle`
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: transparent;
+        border-radius: 8px;
+    }
+
+    &:hover::-webkit-scrollbar-thumb {
+        background-color: ${( )=> theme.COLORS.BLUE_PRIMARY};
+    }
+
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
     * {
         padding: 0;
         margin: 0;

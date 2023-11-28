@@ -1,11 +1,8 @@
-import { Container, Form, Contact} from "./style.js"
-import { Header } from "../../components/Header"
+import { Container, Content, Form} from "./style.js"
+import { Header } from "../../components/Header/index.jsx"
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
-import { TiPhoneOutline } from "react-icons/ti";
-import { MdOutlineMail } from "react-icons/md";
-import { CiLocationOn } from "react-icons/ci";
-import { FaInstagram } from "react-icons/fa";
+import { FaBookBookmark } from "react-icons/fa6";
 
 export function Register() {
     return(
@@ -14,45 +11,45 @@ export function Register() {
 
             <Form>
                 <div>
-                    <h2>Entre em contato!</h2>
-                    <p>
-                        Sinta-se livre para entrar em contato sempre que precisar! 
-                        Responderemos assim que possivel.
-                    </p>
+                    <h2>Crie uma conta!</h2>
+                    <p>Já é membor? faça o <a href="#">Login</a></p>
                 </div>
 
-                <div>
-                    <Input text="Nome" placeholder="Nome"/>
-                    <Input text="E-mail" placeholder="exemplo@gmail.com"/>
-                    <Input text="Mensagem" placeholder="Insira sua mensagem aqui"/>
+                <div id="input-wrapper">
+                    <Input text="Primeiro Nome" placeholder="Nome"/>
+                    <Input text="Sobrenome" placeholder="Nome"/>
                 </div>
 
-                <Button text="Enviar"/>
+                <Input large={true} text="E-mail" placeholder="Exemplo@gmail.com" />
+
+                <Input text="Senha" placeholder="Insira sua senha" eyeButton={true}/>
+
+                <Input text="Data de nascimento" type="date"/>
+
+                <div id="checklist">
+                    <div>
+                        <input type="checkbox" id="receiveEmail"/>
+                        <label htmlFor="receiveEmail">Deseja receber atualizações pelo e-mail?</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="receiveEmail" required/>
+                        <label htmlFor="receiveEmail">Li e estou de acordo com os <a href="#">Termos de Uso e Politica de Privacidade. </a></label>
+                    </div>
+                </div>
+
+                <div id="finishForm">
+                    <Button type="button" whiteTheme={true} text="Voltar"/>
+                    <Button text="Criar conta" />
+                </div>
             </Form>
 
-            <Contact>
-                <strong>CONTATO</strong>
-
-                <div className="contactForm">
-                    <TiPhoneOutline size={26}/>
-                    <span>71 9 9999-9999</span>
-                </div>
-
-                <div className="contactForm">
-                    <FaInstagram size={26}/>
-                    <span>StudiUcsal@gamail.com</span>
-                </div>
-
-                <div className="contactForm">
-                    <MdOutlineMail size={26}/>
-                    <span>@StudiUcsal</span>
-                </div>
-
-                <div className="contactForm">
-                    <CiLocationOn size={26}/>
-                    <span>R. Cap. Melo, 651 - Stella Maris, Salvador</span>
-                </div>
-            </Contact>
+            <Content>
+                <p>
+                    A plataforma de aprendizado online <strong>MAIS COMPLETA</strong> do mercado
+                </p>
+                <FaBookBookmark size={60}/>
+            </Content>
         </Container>
     )
 }

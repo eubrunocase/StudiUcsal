@@ -5,7 +5,7 @@ export const Container = styled.div`
     padding: 1.3rem 2.4rem 1.5rem;
 
     border-radius: 2rem;
-    width: ${(props) => props.$large ? "100%" : "33rem"};
+    width: ${(props) => props.$large ? "100%" : "28rem"};
 
     display: flex;
     flex-direction: column;
@@ -13,6 +13,8 @@ export const Container = styled.div`
     align-items: start;
 
     background-color: ${() => theme.COLORS.GRAY_PRIMARY};
+
+    position: relative;
 
     > strong {
         font-weight: 700;
@@ -26,5 +28,13 @@ export const Container = styled.div`
         &placeholder {
             color: ${() => theme.COLORS.GRAY_SECONDARY};
         }
+    }
+
+    > button {
+        position: absolute;
+        right: 3rem;
+        bottom: 1rem;
+
+        background: transparent;
     }
 `
