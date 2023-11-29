@@ -9,7 +9,6 @@ export const Container = styled.div`
     grid-template-rows: 9.3rem auto;
     grid-template-columns: 1fr 1fr;
     row-gap: 6.6rem;
-    column-gap: 10rem;
 
     height: 100vh;
     width: 100%;
@@ -27,6 +26,7 @@ export const Form = styled.form`
     padding-right: 2rem;
 
     overflow-y: auto;
+    overflow-x: hidden;
     ::-webkit-scrollbar-thumb {
         background-color: transparent;
     }
@@ -108,6 +108,8 @@ export const Content = styled.div`
     grid-area: content;
 
     width: 40rem;
+    
+    margin-left: 10rem;
 
     display: flex;
     flex-direction: column;
