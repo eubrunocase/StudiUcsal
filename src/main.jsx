@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom/client'
 import { ThemeProvider } from "styled-components"
 import { theme } from './styles/theme.js'
 import { GlobalStyle } from './styles/global.js'
-import { Courses } from './pages/Courses/index.jsx'
+import { Routes } from './Routes/index.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       
-      <Courses />
+      <Routes />
 
     </ThemeProvider>
   </React.StrictMode>,

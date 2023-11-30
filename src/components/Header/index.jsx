@@ -1,5 +1,6 @@
 import { Container } from './style.js'
 import {Logo} from "../../assets/logo.jsx"
+import { Link } from 'react-router-dom'
 
 // eslint-disable-next-line react/prop-types
 export function Header({whiteTheme = false}) {
@@ -11,13 +12,13 @@ export function Header({whiteTheme = false}) {
             </div>
 
             <div id='links'>
-                <a href="#">MENU</a>
-                <a href="#">CURSOS</a>
-                <a href="#">SOBRE NÓS</a>
-                <a href="#">CONTATO</a>
+                <Link to={"/"}>MENU</Link>
+                <Link to={"/courses"}>CURSOS</Link>
+                <Link to={"/aboutus"}>SOBRE NÓS</Link>
+                <Link to={"/contact"}>CONTATO</Link>
             </div>
 
-            <a href="#">CADASTRE-SE</a>
+            <Link to={"/register"}>CADASTRE-SE</Link>
         </Container>
     )
 }

@@ -7,19 +7,18 @@ import { useRef } from "react";
 export function Carousel({arrayImages = []}) {
 
     let listOfCoursesRef = useRef(null)
-    console.log(listOfCoursesRef)
 
     function btnPressPrevious() {
         if (listOfCoursesRef.current) {
             let width = listOfCoursesRef.current.clientWidth;
-            listOfCoursesRef.current.scrollLeft = listOfCoursesRef.current.scrollLeft - width;
+            listOfCoursesRef.current.scrollLeft = listOfCoursesRef.current.scrollLeft - (width + 30);
         }
     }
 
     function btnPressNext() {
         if (listOfCoursesRef.current) {
             let width = listOfCoursesRef.current.clientWidth;
-            listOfCoursesRef.current.scrollLeft = listOfCoursesRef.current.scrollLeft + width;
+            listOfCoursesRef.current.scrollLeft = listOfCoursesRef.current.scrollLeft + (width + 30);
         }
     }
 
